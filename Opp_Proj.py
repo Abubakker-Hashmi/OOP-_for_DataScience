@@ -1,9 +1,11 @@
 class chatbook:
     def __init__(self):
-        self.uname=""
-        self.password=""
+        self.__name="edward"  # double underscore means private
+        self._fnam="jinner" #protected
+        self.uname="879"
+        self.password="345"
         self.login=False
-        self.menu()
+       # self.menu()
     def menu(self):
         user_input=input("""Welcome ,Enter your choice:
                          1:Signup
@@ -65,3 +67,4 @@ class chatbook:
             print("You need to login first")
             self.menu()   
 #obj1=chatbook()
+#creating attributes outside of the class
