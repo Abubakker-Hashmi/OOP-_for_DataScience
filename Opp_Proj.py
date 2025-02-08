@@ -8,7 +8,7 @@ class chatbook:
         user_input=input("""Welcome ,Enter your choice:
                          1:Signup
                          2: signin
-                         3:chat
+                         3: post
                          4:message a frnd
                          5: any key to exit
                           """)
@@ -17,9 +17,9 @@ class chatbook:
         elif user_input=="2":
             self.signin()
         elif user_input=="3":
-            pass
+            self.post()
         elif user_input=="4":
-            pass
+            self.message()
         else:
             exit()
 
@@ -45,4 +45,23 @@ class chatbook:
                 print("Invalid username or password")
                 self.menu()
         self.menu()
-obj1=chatbook()
+
+    def post(self):
+        if self.login:
+            print("Enter your post")
+            post=input()
+            print("Post successfull :-->",post)
+            self.menu()
+        else:
+            print("You need to login first")
+            self.menu()
+    def message(self):
+        if self.login:
+            message=input("enter your message")
+            user=input("Enter username to send message")
+            print("Message sent to",user)
+            self.menu()
+        else:
+            print("You need to login first")
+            self.menu()   
+#obj1=chatbook()
