@@ -1,5 +1,8 @@
 class chatbook:
+    __user_id=1 #accesing this class name will be used 
     def __init__(self):
+        self.id=chatbook.__user_id
+        chatbook.__user_id+=1
         self.__name="edward"  # double underscore means private
         self._fnam="jinner" #protected
         self.uname="879"
@@ -24,7 +27,19 @@ class chatbook:
             self.message()
         else:
             exit()
-
+    @staticmethod
+    def set_id(id):  # chatbook.set_id(9)     #static method access using class name
+        chatbook.__user_id=id
+    @staticmethod    
+    def get_id():
+        return chatbook.__user_id
+    
+    def get_name(self):
+        return(self.__name)
+    
+    def set_name(self,name):
+        self.__name=name
+        return('')
     def signup(self):
         self.uname=input("Enter your username")
         self.password=input("Enter your password")
